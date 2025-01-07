@@ -13,6 +13,7 @@ function ProductDetails() {
 
     let {productId} = useParams();
 
+    /* eslint-disable react-hooks/exhaustive-deps */
     useEffect(() => {
         dispatch(fetchProducts())    
     }, [])
