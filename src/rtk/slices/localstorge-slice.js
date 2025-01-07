@@ -5,7 +5,7 @@ const localStorageSlice = createSlice({
     name: 'localStorageSlice',
     reducers: {
         addToLS: (state, action) => {
-            const currPrd = state.find((product) => product.id == action.payload.id);
+            const currPrd = state.find((product) => product.id === action.payload.id);
             if(currPrd) {
                 currPrd.quantity += 1;
             } else {

@@ -18,7 +18,7 @@ function ProductDetails() {
         dispatch(fetchProducts())    
     }, [])
 
-    const product = products.filter((product) => product.id == productId)[0];
+    const product = products.filter((product) => product.id === productId)[0];
     
     return (
         <Container className="py-5">

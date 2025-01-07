@@ -10,7 +10,7 @@ const cartSlice = createSlice({
                 if (currPrd) {
                     currPrd.quantity += 1;
                 } else {
-                    const prdClone = {... action.payload, quantity: 1}
+                    const prdClone = {...action.payload, quantity: 1}
                     state.push(prdClone)
                 }
             }
