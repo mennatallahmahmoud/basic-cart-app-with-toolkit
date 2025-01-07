@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router";
 import { fetchProducts } from "../rtk/slices/products-slice";
 import { addToCart } from "../rtk/slices/cart-slice";
+import Loading from "../components/Loading";
 
 function ProductDetails() {
 
@@ -23,7 +24,7 @@ function ProductDetails() {
     
     return (
         <Container className="py-5">
-            {product && 
+            {product ? 
                 <Card style={{ width: '20rem', margin: '40px auto' }}>
                     <Card.Img variant="top" src={product.image} style={{height: '300px', padding: '20px'}}/>
                     <Card.Body>
@@ -36,6 +37,9 @@ function ProductDetails() {
                         </Card.Text>
                         <Button variant="primary" className="d-block mx-auto" onClick={() => dispatch(addToCart(product))}>Add To Cart</Button>
                     </Card.Body>
+                </Card> :
+                <Card style={{ width: '20rem', margin: '40px auto' }}>
+                    <Loading />
                 </Card>
             }
         </Container>
