@@ -15,7 +15,8 @@ function Products() {
     const dispatch = useDispatch();
 
     const [searchInput, setSearchInput] = useState('');
-    
+   
+    /* eslint-disable react-hooks/exhaustive-deps */
     useEffect(() => {
         dispatch(fetchProducts());
     }, [])
