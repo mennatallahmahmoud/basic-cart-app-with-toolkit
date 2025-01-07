@@ -15,10 +15,11 @@ function ProductDetails() {
 
     /* eslint-disable react-hooks/exhaustive-deps */
     useEffect(() => {
-        dispatch(fetchProducts())    
+        dispatch(fetchProducts());  
     }, [])
 
-    const product = products.filter((product) => product.id === productId)[0];
+    const product = products.find((product) => product.id === +productId);
+    
     
     return (
         <Container className="py-5">
